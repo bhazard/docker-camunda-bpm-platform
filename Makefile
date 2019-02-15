@@ -18,7 +18,6 @@
 REPONAME=bhazard
 IMAGENAME=$(REPONAME)/camunda
 CONTAINERNAME=camunda
-# LOCAL_AIRFLOW_HOME=/airflow/
 CAMUNDA_VERSION=7.10.0
 TAG=$(CAMUNDA_VERSION)
 DOCKERFLAGS=--build-arg VERSION=$(CAMUNDA_VERSION)
@@ -30,7 +29,6 @@ include docker.mk
 run: build
 	docker run $(DOCKERPORTS) --name $(CONTAINERNAME) $(IMAGENAME):$(TAG)
 
-#	docker run -p  --name $(CONTAINERNAME) $(IMAGENAME):$(TAG)
 
 # -----------------------------------------------------------------------------
 # Testing -- use goss for testing container health
@@ -41,9 +39,6 @@ test:
 
 test-edit:
 	dgoss edit $(DOCKERPORTS) $(IMAGENAME):$(TAG)
-
-# dirs:
-# 	mkdir -p $(LOCAL_AIRFLOW_HOME)
 
 cleancontainer:
 	docker container rm $(CONTAINERNAME)
