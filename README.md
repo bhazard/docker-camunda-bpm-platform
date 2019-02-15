@@ -38,10 +38,11 @@ to enable authentication for the Rest-API.
 
 ## To-dos
 
-- [ ] Move to compose
+- [X] Add `docker-compose`
 - [ ] Test REST API access
-- [ ] Add mailhog and test
-- [ ] Start with HB `docker-compose`
+- [X] Add mailhog
+- [ ] Test mailhog
+- [ ] Add to HB `docker-compose`
 - [ ] Configure to use mysql
 - [ ] Use HB DB configuration
 - [ ] Add small (web) client app

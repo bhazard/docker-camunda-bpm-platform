@@ -1,0 +1,28 @@
+# docker-compose configuration for camunda
+version: '3.5'
+services:
+
+  mysql: # Commit this out if you are connecting to RDS
+    image: quay.io/honestbuildings/hb_mysql:2019-01-15
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=true
+    ports:
+      - 3306:3306
+
+  smtp:
+    image: quay.io/honestbuildings/hb_mailhog:latest
+    environment:
+      - MH_SMTP_BIND_ADDR=0.0.0.0:2525
+    ports:
+      - 18025:8025
+      - 12525:2525
+    depends_on:
+      - mysql
+
+  camunda:
+    image: bhazard/camunda
+    ports:
+      - 8084:8080
+    depends_on:
+      - mysql
+
