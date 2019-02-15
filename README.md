@@ -34,6 +34,23 @@ documentation for more details on how to use it.
 follow the instructions from the [documentation](https://docs.camunda.org/manual/latest/reference/rest/overview/authentication/)
 to enable authentication for the Rest-API.
 
+---
+
+## To-dos
+
+- [ ] Move to compose
+- [ ] Test REST API access
+- [ ] Add mailhog and test
+- [ ] Start with HB `docker-compose`
+- [ ] Configure to use mysql
+- [ ] Use HB DB configuration
+- [ ] Add small (web) client app
+- [ ] Deploy a toy workflow
+- [ ] Develop a straight replacement for HB workflow
+- [ ] Play with branding?
+
+---
+
 ## Supported Tags/Releases
 
 The following tag schema is used. The user has the choice between different
@@ -307,17 +324,11 @@ docker run -d --name camunda -p 8080:8080 \
           camunda/camunda-bpm-platform:latest
 ```
 
-## Maintainer
-
-[Sebastian Menski][]
-
-
 ## License
 
 Apache License, Version 2.0
 
 
-[Sebastian Menski]: https://github.com/menski
 [twitter demo]: https://github.com/camunda/camunda-consulting/tree/master/showcases/twitter
 [docker registry]: https://registry.hub.docker.com/u/camunda/camunda-bpm-platform/
 [docker hub tags]: https://hub.docker.com/r/camunda/camunda-bpm-platform/tags/
