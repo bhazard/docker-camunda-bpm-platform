@@ -1,23 +1,22 @@
 # Camunda BPM Platform Docker Images
 
-This Camunda BPM community project provides docker images of the latest Camunda
-BPM platform releases. The images can be used to demonstrate and test the
-Camunda BPM platform or can be extended with own process applications. It is
-planned to provide images on the official [docker registry][] for every upcoming
-release, which includes alpha releases.
+This project provides docker images of the latest Camunda
+BPM platform releases. 
 
 ## Get started
 
 To start the latest release:
 
 ```
-docker pull camunda/camunda-bpm-platform:latest
-docker run -d --name camunda -p 8080:8080 camunda/camunda-bpm-platform:latest
+make run
 ```
+
+`make` will build and run a local container on port 8084.  To access the main
+demo navigation, hit http://localhost:8084/camunda-welcome/index.html
 
 ### Tasklist, Cockpit, Admin Web Apps
 
-The three Camunda webapps are accessible through the landing page: http://localhost:8080/camunda-welcome/index.html
+The three Camunda webapps are accessible through the landing page: http://localhost:8084/camunda-welcome/index.html
 
 The default credentials for admin access to the webapps is:
 
@@ -26,7 +25,7 @@ The default credentials for admin access to the webapps is:
 
 ### Rest-API
 
-The Camunda Rest-API is accessible through: http://localhost:8080/engine-rest
+The Camunda Rest-API is accessible through: http://localhost:8084/engine-rest
 
 See the [Rest-API](https://docs.camunda.org/manual/latest/reference/rest/)
 documentation for more details on how to use it.
@@ -34,7 +33,6 @@ documentation for more details on how to use it.
 **Note**: The Rest-API does not require authentication by default. Please
 follow the instructions from the [documentation](https://docs.camunda.org/manual/latest/reference/rest/overview/authentication/)
 to enable authentication for the Rest-API.
-
 
 ## Supported Tags/Releases
 
