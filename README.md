@@ -51,8 +51,8 @@ to enable authentication for the Rest-API.
 - [ ] Deploy a toy workflow
 - [ ] Develop a straight replacement for HB workflow
 - [ ] Play with branding?
-- [ ] Investigate use of [projectreactor](https://projectreactor.io/) [plugin](https://github.com/camunda/camunda-bpm-reactor) and 
-- [ ] Consider separating engine, tasklist, admin into separate containers
+- [ ] Investigate use of [projectreactor](https://projectreactor.io/) and the associated [plugin](https://github.com/camunda/camunda-bpm-reactor)
+- [ ] Consider separating engine, tasklist, cockpit, modeler, admin into separate containers
 - [ ] Evaluate how to implement security
 
 ---
