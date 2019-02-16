@@ -48,10 +48,10 @@ cp /tmp/camunda-${GROUP}.sh /camunda/camunda.sh
 # fi
 wget --progress=bar:force:noscroll -O /tmp/pom.xml "${NEXUS}?r=${REPO}&g=org.camunda.bpm&a=camunda-database-settings&v=${ARTIFACT_VERSION}&p=pom"
 MYSQL_VERSION=$(xmlstarlet sel -t -v //_:version.mysql /tmp/pom.xml)
-POSTGRESQL_VERSION=$(xmlstarlet sel -t -v //_:version.postgresql /tmp/pom.xml)
+# POSTGRESQL_VERSION=$(xmlstarlet sel -t -v //_:version.postgresql /tmp/pom.xml)
 
 wget -O /tmp/mysql-connector-java-${MYSQL_VERSION}.jar "${NEXUS}?r=public&g=mysql&a=mysql-connector-java&v=${MYSQL_VERSION}&p=jar"
-wget -O /tmp/postgresql-${POSTGRESQL_VERSION}.jar "${NEXUS}?r=public&g=org.postgresql&a=postgresql&v=${POSTGRESQL_VERSION}&p=jar"
+# wget -O /tmp/postgresql-${POSTGRESQL_VERSION}.jar "${NEXUS}?r=public&g=org.postgresql&a=postgresql&v=${POSTGRESQL_VERSION}&p=jar"
 
 # case ${DISTRO} in
 #     wildfly*)
@@ -72,7 +72,7 @@ wget -O /tmp/postgresql-${POSTGRESQL_VERSION}.jar "${NEXUS}?r=public&g=org.postg
 #         ;;
 #     *)
         cp /tmp/mysql-connector-java-${MYSQL_VERSION}.jar /camunda/lib
-        cp /tmp/postgresql-${POSTGRESQL_VERSION}.jar /camunda/lib
+        # cp /tmp/postgresql-${POSTGRESQL_VERSION}.jar /camunda/lib
         # remove default CATALINA_OPTS from environment settings
         echo "" > /camunda/bin/setenv.sh
 #         ;;
