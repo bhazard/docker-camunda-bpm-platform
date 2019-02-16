@@ -12,9 +12,6 @@
 # To do this in one wack in bash:
 #   $(aws ecr get-login --no-include-email --region us-east-2)
 
-# AWSACCOUNT=091235034633
-# AWSREGION=us-east-2
-# REPOURL=$(AWSACCOUNT).dkr.ecr.$(AWSREGION).amazonaws.com
 REPONAME=bhazard
 IMAGENAME=$(REPONAME)/camunda
 CONTAINERNAME=camunda
@@ -40,9 +37,6 @@ test:
 test-edit:
 	dgoss edit $(DOCKERPORTS) $(IMAGENAME):$(TAG)
 
-cleancontainer:
-	docker container rm $(CONTAINERNAME)
-
 clean: cleancontainer
 
-squeaky: clean
+squeaky: clean cleanimage

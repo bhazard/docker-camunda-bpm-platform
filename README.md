@@ -40,10 +40,12 @@ to enable authentication for the Rest-API.
 
 - [X] Add `docker-compose`
 - [ ] Test REST API access
-- [X] Add mailhog
+- [ ] Add [mail conector](https://github.com/camunda/camunda-bpm-mail)
+- [X] Add mailhog (included in the docker-compose containers)
 - [ ] Test mailhog
-- [ ] Add to HB `docker-compose`
+- [ ] Create simple approval using email by hand
 - [ ] Configure to use mysql
+- [ ] Add to HB `docker-compose`
 - [ ] Use HB DB configuration
 - [ ] Add small (web) client app
 - [ ] Deploy a toy workflow

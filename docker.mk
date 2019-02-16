@@ -39,3 +39,10 @@ version:
 	@echo Repo: $(REPONAME) >> version
 	@echo Version: $(TAG) >> version
 	@echo Date: $$(date) >> version
+
+cleancontainer:
+	-docker container rm $(CONTAINERNAME)
+ 
+cleanimage: cleancontainer
+	-docker image rm $(IMAGENAME):latest
+	-docker image rm $(IMAGENAME):$(TAG) -f
