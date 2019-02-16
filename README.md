@@ -38,19 +38,26 @@ to enable authentication for the Rest-API.
 
 ## To-dos
 
+### Initial Docker Setup and Testing
 - [X] Add `docker-compose`
 - [ ] Test REST API access in container (had issue with this previously)
-- [ ] Add [mail conector](https://github.com/camunda/camunda-bpm-mail)
 - [X] Add mailhog (included in the docker-compose containers)
 - [ ] Test mailhog
 - [ ] Create simple approval using email by hand
+- [ ] Add [mail conector](https://github.com/camunda/camunda-bpm-mail)
+- [ ] Add small (web) client app
+
+### Database Setup
 - [ ] Configure to use mysql
+
+### Integration with HB
 - [ ] Add to HB `docker-compose`
 - [ ] Use HB DB configuration
-- [ ] Add small (web) client app
 - [ ] Deploy a toy workflow
 - [ ] Develop a straight replacement for HB workflow
 - [ ] Play with branding?
+
+### Production Concerns
 - [ ] Investigate use of [projectreactor](https://projectreactor.io/) and the associated [plugin](https://github.com/camunda/camunda-bpm-reactor)
 - [ ] Consider separating engine, tasklist, cockpit, modeler, admin into separate containers
 - [ ] Evaluate how to implement security
