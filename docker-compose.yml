@@ -2,7 +2,7 @@
 version: '3.5'
 services:
 
-  mysql: # Commit this out if you are connecting to RDS
+  mysql: # Comment this out if you are connecting to RDS
     image: quay.io/honestbuildings/hb_mysql:2019-01-15
     environment:
       - MYSQL_RANDOM_ROOT_PASSWORD=true
@@ -25,4 +25,3 @@ services:
       - 8084:8080
     depends_on:
       - mysql
-
