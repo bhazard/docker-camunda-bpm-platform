@@ -14,7 +14,6 @@ RUN apk add --no-cache \
         wget \
         xmlstarlet
 
-#COPY download.sh camunda-tomcat.sh camunda-wildfly.sh  /tmp/
 COPY download.sh camunda-tomcat.sh  /tmp/
 COPY wait-for-it.sh /usr/local/bin
 
@@ -50,10 +49,6 @@ RUN apk add --no-cache \
         tzdata \
         tini \
         xmlstarlet
-
-    # && wget -O /usr/local/bin/wait-for-it.sh \
-    #   "https://raw.githubusercontent.com/vishnubob/wait-for-it/db049716e42767d39961e95dd9696103dca813f1/wait-for-it.sh" \
-    # && chmod +x /usr/local/bin/wait-for-it.sh
 
 RUN addgroup -g 1000 -S camunda && \
     adduser -u 1000 -S camunda -G camunda -h /camunda -s /bin/bash -D camunda

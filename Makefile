@@ -24,8 +24,11 @@ include docker.mk
 
 # 8080 - camunda main ui
 run: build
-	docker run $(DOCKERPORTS) --name $(CONTAINERNAME) $(IMAGENAME):$(TAG)
+	#	docker run $(DOCKERPORTS) --name $(CONTAINERNAME) $(IMAGENAME):$(TAG)
+	docker-compose up
 
+stop:
+	-docker-compose down
 
 # -----------------------------------------------------------------------------
 # Testing -- use goss for testing container health
@@ -39,4 +42,4 @@ test-edit:
 
 clean: cleancontainer
 
-squeaky: clean cleanimage
+squeaky: stop clean cleanimage
