@@ -36,11 +36,27 @@ to enable authentication for the Rest-API.
 
 ---
 
+## Running the Javascript Example
+
+Start camunda via `docker-compose up` from the root directory
+
+Use node version >= 8.9.4
+cd to example/js
+run `npm install`
+Start the worker via `node worker.js`
+- it should report that it successfully subscribed (but this means absolutely nothing)
+- it should then indicate that it is polling and report that it polled 0 tasks (this is good - the worker connected to your running )
+
+The deployment endpoint (for the modeler) is: http://localhost:8084/engine-rest/deployment/create
+
+
+
 ## To-dos
 
 ### Initial Docker Setup and Testing
 - [X] Add `docker-compose`
-- [ ] Test REST API access in container (had issue with this previously)
+- [X] Test REST API access in container (had issue with this previously)
+- [X] Deploy a toy workflow
 - [X] Add mailhog (included in the docker-compose containers)
 - [ ] Test mailhog
 - [ ] Create simple approval using email by hand
@@ -53,7 +69,7 @@ to enable authentication for the Rest-API.
 ### Integration with HB
 - [ ] Add to HB `docker-compose`
 - [ ] Use HB DB configuration
-- [ ] Deploy a toy workflow
+- [ ] Deploy a toy workflow using HB API
 - [ ] Develop a straight replacement for HB workflow
 - [ ] Play with branding?
 
