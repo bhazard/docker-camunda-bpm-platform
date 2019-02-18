@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1o34f2u" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="2.2.4">
+  <bpmn:process id="payment-retrieval-with-approval" name="Payment Retrieval with Approval" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Payment&#10;Retrieval&#10;Requested">
+      <bpmn:outgoing>SequenceFlow_03om0ff</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_03om0ff" sourceRef="StartEvent_1" targetRef="Task_0pwoho3" />
+    <bpmn:endEvent id="EndEvent_0xhn9q5" name="Payment&#10;Received">
+      <bpmn:incoming>SequenceFlow_0x0seuz</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0x0seuz" sourceRef="Task_0ks4v8g" targetRef="EndEvent_0xhn9q5" />
+    <bpmn:serviceTask id="Task_0ks4v8g" name="Charge Credit Card" camunda:type="external" camunda:topic="charge-card">
+      <bpmn:incoming>SequenceFlow_1hswoxd</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0x0seuz</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_1hswoxd" sourceRef="Task_0pwoho3" targetRef="Task_0ks4v8g" />
+    <bpmn:userTask id="Task_0pwoho3" name="Approve Payment" camunda:assignee="demo">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="amount" label="Amount" type="long" />
+          <camunda:formField id="item" label="Item" type="string" />
+          <camunda:formField id="approved" label="Approved?" type="boolean" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>SequenceFlow_03om0ff</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1hswoxd</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="payment-retrieval-with-approval">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="173" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="164" y="145" width="54" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_03om0ff_di" bpmnElement="SequenceFlow_03om0ff">
+        <di:waypoint x="209" y="120" />
+        <di:waypoint x="270" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_0xhn9q5_di" bpmnElement="EndEvent_0xhn9q5">
+        <dc:Bounds x="632" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="627" y="145" width="46" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0x0seuz_di" bpmnElement="SequenceFlow_0x0seuz">
+        <di:waypoint x="556" y="120" />
+        <di:waypoint x="632" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_0440bi8_di" bpmnElement="Task_0ks4v8g">
+        <dc:Bounds x="456" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1hswoxd_di" bpmnElement="SequenceFlow_1hswoxd">
+        <di:waypoint x="370" y="120" />
+        <di:waypoint x="456" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_11amitt_di" bpmnElement="Task_0pwoho3">
+        <dc:Bounds x="270" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
