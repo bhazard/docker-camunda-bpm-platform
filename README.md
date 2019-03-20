@@ -84,22 +84,9 @@ The deployment endpoint (for the modeler) is: http://localhost:8084/engine-rest/
 
 ---
 
-## Supported Tags/Releases
+# Notes from the Original Forked project about the docker image
 
-The following tag schema is used. The user has the choice between different
-application server distributions of Camunda BPM platform. `${DISTRO}` can
-either be `tomcat` or `wildfly`. If no `${DISTRO}` is specified the
-`tomcat` distribution is used.
-
-- `latest`, `${DISTRO}-latest`: Alywas the latest minor release of Camunda BPM
-  platform. Without
-- `SNAPSHOT`, `${VERSION}-SNAPSHOT`, `${DISTRO}-SNAPSHOT`,
-  `${DISTRO}-${VERSION}-SNAPSHOT`: The latest SNAPSHOT version of Camunda BPM
-  platform, which is not released yet.
-- `${VERSION}`, `${DISTRO}-${VERSION}`: A specific version of Camunda BPM
-  platform.
-
-For all available tags see the [docker hub tags][].
+---
 
 ## Java Version
 
