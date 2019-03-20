@@ -5,7 +5,7 @@ BPM platform releases.
 
 ## Get started
 
-To start the latest release:
+To start the specified release:
 
 ```
 make run
@@ -60,8 +60,12 @@ The deployment endpoint (for the modeler) is: http://localhost:8084/engine-rest/
 - [X] Add mailhog (included in the docker-compose containers)
 - [ ] Test mailhog
 - [ ] Create simple approval using email by hand
-- [ ] Add [mail conector](https://github.com/camunda/camunda-bpm-mail)
 - [ ] Add small (web) client app
+
+
+### Email Setup
+- [ ] Install / Build [mail conector](https://github.com/camunda/camunda-bpm-mail)
+- [ ] Configure the connector to send email for approval
 
 ### Database Setup
 - [ ] Configure to use mysql
@@ -72,9 +76,9 @@ The deployment endpoint (for the modeler) is: http://localhost:8084/engine-rest/
 - [ ] Deploy a toy workflow using HB API
 - [ ] Develop a straight replacement for HB workflow
 - [ ] Play with branding?
+- [ ] Investigate use of [projectreactor](https://projectreactor.io/) and the associated [plugin](https://github.com/camunda/camunda-bpm-reactor)
 
 ### Production Concerns
-- [ ] Investigate use of [projectreactor](https://projectreactor.io/) and the associated [plugin](https://github.com/camunda/camunda-bpm-reactor)
 - [ ] Consider separating engine, tasklist, cockpit, modeler, admin into separate containers
 - [ ] Evaluate how to implement security
 
