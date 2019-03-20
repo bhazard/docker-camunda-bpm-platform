@@ -6,7 +6,7 @@
 # REPONAME
 # TAG
 # REPOURL
-.PHONY: build
+.PHONY: aws-repo tag version cleancontainer
 
 # Build the IMAGE using the local Dockerfile; tag it in the local Docker repo
 build: Dockerfile 
